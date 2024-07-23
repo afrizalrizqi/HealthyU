@@ -6,7 +6,6 @@
 <data-extraction-rules>
     <cloud-backup>
         <!-- Include the entire home directory -->
-        <!--        <include pattern="~/"/>-->
 
         <!-- Exclude system and temporary directories -->
         <exclude pattern="~/temp/"/>
