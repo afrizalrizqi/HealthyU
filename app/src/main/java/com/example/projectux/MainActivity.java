@@ -71,6 +71,8 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "NIK tidak boleh kosong!", Toast.LENGTH_SHORT).show();
                 } else if (email.getText().toString().equals("")) {
                     Toast.makeText(MainActivity.this, "Email tidak boleh kosong!", Toast.LENGTH_SHORT).show();
+                } else if (!email.getText().toString().contains("@gmail.com")) {
+                    Toast.makeText(MainActivity.this, "Email harus memiliki @gmail.com!", Toast.LENGTH_SHORT).show();
                 } else if (password.getText().toString().equals("")) {
                     Toast.makeText(MainActivity.this, "Kata Sandi tidak boleh kosong!", Toast.LENGTH_SHORT).show();
                 }else if (password.getText().toString().length()<8){
