@@ -7,11 +7,11 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="colorPrimary">#FAC22F</color>
     <color name="register1">#9DE6FF</color>
     <color name="register2">#E3F8FF</color>
     <color name="button_register">#FAC22F</color>
     <color name="placeholder_text">#787878</color>
-
     <color name="grey">#BABABA</color>
     <color name="detail_grey">#787878</color>
 </resources>
