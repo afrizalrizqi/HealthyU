@@ -19,6 +19,9 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".konfirmasi_jadwal_home_service" />
         <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true" >
             <intent-filter>
