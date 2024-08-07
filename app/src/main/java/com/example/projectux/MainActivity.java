@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             Toast.makeText(MainActivity.this, "Akun telah berhasil dibuat!", Toast.LENGTH_SHORT).show();
-                            Intent intent =  new Intent(MainActivity.this,LoginActivity.class);
+                            Intent intent =  new Intent(MainActivity.this,konfirmasi_jadwal_home_service.class);
                             startActivity(intent);
                         }
                     });

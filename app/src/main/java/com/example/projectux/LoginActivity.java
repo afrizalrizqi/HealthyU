@@ -51,7 +51,7 @@ public class LoginActivity extends AppCompatActivity {
                 }else if (password.getText().toString().length()<8){
                     Toast.makeText(LoginActivity.this, "Kata Sandi harus lebih dari 8!", Toast.LENGTH_SHORT).show();
                 }else{
-                    Intent intent =  new Intent(LoginActivity.this,MainActivity.class);
+                    Intent intent =  new Intent(LoginActivity.this,konfirmasi_jadwal_tes_langsung.class);
                     startActivity(intent);
                 }
             }
