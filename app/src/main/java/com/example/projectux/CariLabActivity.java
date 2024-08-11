@@ -19,9 +19,9 @@ public class CariLabActivity extends AppCompatActivity {
 
         // Step 1: Create a list of LabCard objects
         labCardList = new ArrayList<>();
-        labCardList.add(new LabCard("PT. Syslab", "Sentul City Plaza Amsterdam...",
+        labCardList.add(new LabCard("PT. Syslab", "Sentul City Plaza Amsterdam, Bogor Utara, Indonesia, Konoha",
                 "08:00 - 17:00", "(021) 87962155", R.drawable.imagelab));
-        labCardList.add(new LabCard("Lab CITO Bogor", "Jl. Raya Pajajaran No.145...",
+        labCardList.add(new LabCard("Lab CITO Bogor", "Jl. Raya Pajajaran No.145, Bogor Utara, Indonesia, Konoha",
                 "06:00 - 21:00", "081363471847", R.drawable.imagelab));
 
         // Step 2: Find the RecyclerView in your layout

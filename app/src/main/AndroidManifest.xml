@@ -26,6 +26,7 @@
         </activity>
         <activity android:name=".TesActivity" />
         <activity android:name=".CariLabActivity" />
+        <activity android:name=".BookingTesActivity" />
     </application>
 
 </manifest>

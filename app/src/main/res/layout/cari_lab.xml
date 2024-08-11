@@ -15,9 +15,10 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
             android:layout_marginLeft="16dp"
+            android:layout_marginTop="20dp"
             android:text="Cari Lab"
+            android:textColor="@color/black"
             android:textSize="24sp" />
 
         <androidx.recyclerview.widget.RecyclerView
@@ -27,8 +28,7 @@
             android:layout_centerInParent="true"
             android:layout_gravity="center"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            app:spanCount="1"
-            />
+            app:spanCount="1" />
 </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -37,6 +37,15 @@ public class MainActivity extends AppCompatActivity {
         password=findViewById(R.id.password);
         register=findViewById(R.id.register);
 
+        Button bookingtes = findViewById(R.id.bookingtes);
+        bookingtes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, BookingTesActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
         textView= (TextView)findViewById(R.id.ke_login);
         textView.setPaintFlags(textView.getPaintFlags()| Paint.UNDERLINE_TEXT_FLAG);
@@ -60,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //        });
         register.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 if(username.getText().toString().equals("")){
@@ -97,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     });
                     dialog.show();
+
                 }
             }
         });

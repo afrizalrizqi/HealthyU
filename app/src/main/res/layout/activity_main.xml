@@ -125,4 +125,13 @@
         android:textAllCaps="false"
         android:fontFamily="@font/poppins_regular"
         />
+
+    <Button
+        android:id="@+id/bookingtes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="To bookingtes Activity"
+        >
+
+    </Button>
 </LinearLayout>
