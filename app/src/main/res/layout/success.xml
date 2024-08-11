@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="40dp"
+    android:paddingVertical="110dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/backgroundsuccess"
+        android:layout_gravity="center"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:paddingHorizontal="40dp"
+            android:gravity="end"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/closeButton"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="end"
+                android:src="@drawable/ic_close" />
+        </LinearLayout>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="40dp"></Space>
+
+       <LinearLayout
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           android:gravity="center"
+           >
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Sukses"
+               android:textColor="#000000"
+               android:textStyle="bold"
+               android:textSize="18sp"
+               android:layout_marginBottom="8dp" />
+           <ImageView
+               android:layout_width="80dp"
+               android:layout_height="80dp"
+               android:src="@drawable/checkcircle"
+               android:layout_marginTop="16dp"
+               android:layout_marginBottom="16dp" />
+
+
+           <TextView
+               android:layout_width="250dp"
+               android:layout_height="wrap_content"
+               android:lineSpacingExtra="4dp"
+               android:text="Penjadwalan berhasil dibuat! Anda dapat melihatnya pada halaman Riwayat Tes"
+               android:textAlignment="center"
+               android:textColor="#000000"
+               android:textSize="14sp" />
+       </LinearLayout>
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"></Space>
+    </LinearLayout>
+
+</LinearLayout>
