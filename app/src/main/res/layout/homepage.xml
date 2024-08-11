@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selamat Datang"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="90dp"
+        />
+
+    <ImageView
+        android:id="@+id/iconNotification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_notifications_24"
+        tools:layout_editor_absoluteX="371dp"
+        tools:layout_editor_absoluteY="90dp"/>
+
+    <!-- Kalkulator BMI -->
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/bmi"
+        android:layout_width="358dp"
+        android:layout_height="241dp"
+        app:layout_editor_absoluteY="130dp"
+        tools:layout_editor_absoluteX="26dp"
+        android:background="#00BFFF">
+
+
+    </androidx.viewpager.widget.ViewPager>
+
+    <!-- Berat Badan -->
+    <TextView
+        android:id="@+id/beratBadanLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Berat Badan"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="57dp"
+        tools:layout_editor_absoluteY="390dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_editor_absoluteY="425dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/beratBadanInput"
+            android:hint="Berat Badan dalam Kg"
+            android:layout_gravity="center"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content">
+        </com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Berat Badan -->
+    <TextView
+        android:id="@+id/tinggiBadanLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tinggi Badan"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="57dp"
+        tools:layout_editor_absoluteY="490dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_editor_absoluteY="525dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tinggiBadanInput"
+            android:hint="Tinggi Badan dalam Cm"
+            android:layout_gravity="center"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content">
+        </com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Hasil Perhitungan -->
+    <Button
+        android:id="@+id/submitBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="612dp"
+        android:text="Submit"
+        />
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        tools:layout_editor_absoluteX="39dp"
+        tools:layout_editor_absoluteY="662dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
