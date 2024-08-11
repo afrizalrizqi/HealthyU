@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     android:padding="50dp"
     tools:context=".ProfileActivity">
 
@@ -25,12 +26,12 @@
             style="@style/Hyperlink"
             android:layout_gravity="right"/>
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile_pic"
             android:layout_width="109dp"
             android:layout_height="109dp"
-            android:background="@drawable/ic_launcher_background"
-            android:layout_gravity="center_horizontal"/>
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/ic_launcher_background"/>
 
 <!--        Username Field-->
         <TextView
