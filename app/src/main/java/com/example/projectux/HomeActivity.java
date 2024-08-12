@@ -61,16 +61,16 @@ public class HomeActivity extends AppCompatActivity {
 
     private String getBMICategory(float bmi, TextView categoryTextView){
         if (bmi < 18.5){
-            categoryTextView.setTextColor(getResources().getColor(android.R.color.holo_blue_light));
+            categoryTextView.setTextColor(getResources().getColor(android.R.color.holo_blue_dark));
             return "Kurus";
         } else if (bmi >= 18.5 && bmi < 24.9) {
-            categoryTextView.setTextColor(getResources().getColor(android.R.color.holo_green_light));
+            categoryTextView.setTextColor(getResources().getColor(android.R.color.holo_green_dark));
             return "Normal";
         } else if (bmi >= 24.9 && bmi < 29.9) {
-            categoryTextView.setTextColor(getResources().getColor(android.R.color.holo_orange_light));
+            categoryTextView.setTextColor(getResources().getColor(android.R.color.holo_orange_dark));
             return "Gemuk";
         } else {
-            categoryTextView.setTextColor(getResources().getColor(android.R.color.holo_red_light));
+            categoryTextView.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
             return "Obesitas";
         }
     }
