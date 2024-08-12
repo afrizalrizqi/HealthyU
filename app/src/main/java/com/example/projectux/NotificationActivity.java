@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.os.RecoverySystem;
+import android.widget.Button;
 import android.widget.LinearLayout;
 
 import java.util.ArrayList;
@@ -20,6 +21,7 @@ public class NotificationActivity extends AppCompatActivity {
     private RecyclerView rvNotification;
     private AdapterData adapterData;
     private ArrayList<Reminder> list = new ArrayList<>();
+
 
 
     @Override
@@ -40,6 +42,8 @@ public class NotificationActivity extends AppCompatActivity {
         adapterData = new AdapterData(list);
         rvNotification.setAdapter(adapterData);
     }
+
+
 
 
 }

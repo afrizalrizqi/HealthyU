@@ -44,6 +44,8 @@ public class AdapterData extends RecyclerView.Adapter<AdapterData.ListViewHolder
         // Set text for TextViews
         holder.tvName.setText(reminder.getReminder());
         holder.tvDetail.setText(reminder.getDeskripsi());
+
+
     }
 
     @Override

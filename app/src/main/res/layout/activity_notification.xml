@@ -26,13 +26,13 @@
             android:layout_margin="16sp"
             android:textSize="18sp"/>
 
-        <TextView
-            android:id="@+id/tandaiBacaSemuaTv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Tandai Baca Semua"
-            android:layout_margin="16sp"
-            android:textAlignment="textEnd"/>
+<!--        <TextView-->
+<!--            android:id="@+id/tandaiBacaSemuaTv"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Tandai Baca Semua"-->
+<!--            android:layout_margin="16sp"-->
+<!--            android:textAlignment="textEnd"/>-->
     </LinearLayout>
 
 

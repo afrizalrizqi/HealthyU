@@ -31,6 +31,7 @@
             android:layout_height="wrap_content"
             android:contentDescription="Notification Icon"
             android:src="@drawable/baseline_notifications_24"
+            android:layout_marginStart="190dp"
             app:layout_constraintBottom_toBottomOf="@+id/greetingMessageTv"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/greetingMessageTv"
@@ -64,10 +65,10 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/tinggiBadanTv"
+                    android:id="@+id/beratBadanTv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Tinggi Badan (cm)"
+                    android:text="Berat Badan (kg)"
                     android:textStyle="bold"
                     android:textColor="@color/black"
                     android:paddingTop="7dp"/>
@@ -76,15 +77,15 @@
                     android:id="@+id/beratBadanInput"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:hint="Tinggi badan dalam cm"
+                    android:hint="Berat badan dalam kg"
                     android:textSize="12sp"/>
 
 
                 <TextView
-                    android:id="@+id/beratBadanTv"
+                    android:id="@+id/tinggiBadanTv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Berat Badan (kg)"
+                    android:text="Tinggi Badan (cm)"
                     android:textStyle="bold"
                     android:textColor="@color/black" />
 
@@ -134,7 +135,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
-                    android:text="Normal"
+                    android:text=""
                     android:textColor="@color/black"/>
 
             </LinearLayout>
@@ -147,16 +148,14 @@
     <!-- Header Promo -->
     <TextView
         android:id="@+id/headerPromo"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:layout_marginTop="16dp"
         android:text="Promo"
         android:textSize="18sp"
         android:textColor="@color/black"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/sectionBMI"
-        tools:layout_editor_absoluteX="15dp"/>
+        app:layout_constraintTop_toBottomOf="@+id/sectionBMI"/>
 
     <LinearLayout
         android:id="@+id/sectionPromo"
@@ -265,16 +264,14 @@
     <!-- Header Artikel -->
     <TextView
         android:id="@+id/headerArtikel"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:layout_marginTop="16dp"
         android:text="Artikel"
         android:textSize="18sp"
         android:textColor="@color/black"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/sectionPromo"
-        tools:layout_editor_absoluteX="15dp"/>
+        app:layout_constraintTop_toBottomOf="@+id/sectionPromo" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -370,11 +367,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/artikelEmpat"/>
                 </LinearLayout>
             </LinearLayout>
-
-
-
         </HorizontalScrollView>
-
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
