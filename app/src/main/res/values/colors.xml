@@ -16,4 +16,5 @@
     <color name="detail_grey">#787878</color>
     <color name="unactive">#33FFFFFF</color>
     <color name="unactivetext">#6633363F</color>
+    <color name="borderblue">#00A3FF</color>
 </resources>

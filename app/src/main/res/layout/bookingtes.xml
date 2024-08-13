@@ -27,12 +27,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingVertical="10dp"
+
             android:paddingHorizontal="10dp">
 
             <TextView
                 android:id="@+id/bookingDay"
-                android:layout_width="120dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
                 android:background="@drawable/boxborder"
@@ -44,10 +44,10 @@
 
             <Spinner
                 android:id="@+id/spinnerlayanan"
-                android:layout_width="130dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/boxborder"
-                android:gravity="end"
+                android:gravity="center"
                 android:paddingHorizontal="4dp"
                 android:textColor="@color/black" />
 
@@ -68,30 +68,90 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:background="#00000000"
                 android:gravity="center"
                 android:padding="8dp">
 
                 <ImageView
+                    android:id="@+id/buttonbackmonth"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/backbutton" />
 
                 <TextView
                     android:id="@+id/monthYearText"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
+                    android:gravity="center"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginEnd="16dp"
-                    android:text="Juli 2024"
+                    android:text="Juli"
                     android:textColor="#000"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <ImageView
+                    android:id="@+id/buttonnextmonth"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/nextbutton" />
 
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="25dp"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Min"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Sen"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Sel"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Rab"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Kam"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Jum"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Sab"/>
             </LinearLayout>
 
             <!-- Calendar Days -->
@@ -102,30 +162,10 @@
                 android:columnCount="7"
                 android:rowCount="6"
                 android:paddingHorizontal="25dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="5dp"
                 >
 
-                <TextView
-                    android:layout_width="35dp"
-                    android:layout_height="40dp"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="8dp"
-                    android:gravity="center"
-                    android:text="1"
-                    android:background="@drawable/day_background"
-                    android:textColor="#000"
-                    tools:ignore="MissingConstraints" />
 
-                <TextView
-                    android:layout_width="35dp"
-                    android:layout_height="40dp"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="8dp"
-                    android:gravity="center"
-                    android:text="1"
-                    android:background="@drawable/day_background"
-                    android:textColor="#000"
-                    tools:ignore="MissingConstraints" />
 
                 <!-- Repeat for each day -->
 
