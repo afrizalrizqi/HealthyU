@@ -11,7 +11,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        layout="@layout/custom_action_bar" />
+        layout="@layout/simplified_action_bar" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -144,40 +144,8 @@
                 android:textSize="14dp"
                 />
 
-
-            <!--        Alamat Field-->
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginTop="15.2dp"-->
-<!--                android:layout_marginLeft="5dp"-->
-<!--                android:text="Alamat"-->
-<!--                style="@style/ContentHeader"/>-->
-
-<!--            <EditText-->
-<!--                android:id="@+id/txt_nama_alamat"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Nomor Telepon"-->
-<!--                style="@style/ContentSubHeader"-->
-<!--                android:textSize="14dp"-->
-<!--                />-->
-
-    <!--        <EditText-->
-    <!--            android:id="@+id/txt_detail_alamat"-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:text="Jalan Pakuan No.5"-->
-    <!--            style="@style/ContentDetail"/>-->
-
         </LinearLayout>
 
         </RelativeLayout>
-
-        <include
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_alignParentBottom="true"
-            layout="@layout/custom_navbar" />
 
 </RelativeLayout>

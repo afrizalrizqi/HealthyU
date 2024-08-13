@@ -2,46 +2,55 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:padding="16dp">
+    android:orientation="vertical"
+    android:paddingTop="16dp"
+    android:paddingHorizontal="16dp">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/logoHealthyU"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:src="@drawable/logohealthyu"/>
-
-
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_toEndOf="@+id/logoHealthyU"
-        android:layout_toRightOf="@+id/logoHealthyU"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/headerContentNotification"
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/logoHealthyU"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/logohealthyu"/>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="H-1"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:textSize="22sp"/>
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/logoHealthyU"
+            android:layout_toRightOf="@+id/logoHealthyU"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/descContentNotification"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Jangan lewatkan penjadwalan cek kesehatan kamu"
-            android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/headerContentNotification"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="H-1"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="18sp"/>
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/descContentNotification"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Jangan lewatkan penjadwalan cek kesehatan kamu"
+                android:textColor="@color/black"/>
 
+        </LinearLayout>
 
+    </RelativeLayout>
 
-
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grey"
+        android:layout_marginTop="17dp"/>
 
 </LinearLayout>

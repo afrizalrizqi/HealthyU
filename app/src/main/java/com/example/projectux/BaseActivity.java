@@ -45,17 +45,18 @@ public class BaseActivity extends AppCompatActivity {
                     Toast.makeText(this, "Penjadwalan", Toast.LENGTH_SHORT).show();
 //                    intent = new Intent();
 //                    startActivity(intent);
-                    break;
+                    return true;
 
                 case R.id.menu_beranda:
-//                    intent = new Intent();
-//                    startActivity(intent);
-                    break;
+                    intent = new Intent(this, HomeActivity.class);
+                    startActivity(intent);
+                    return true;
 
                 case R.id.menu_riwayat:
+                    Toast.makeText(this, "Riwayat", Toast.LENGTH_SHORT).show();
 //                    intent = new Intent();
 //                    startActivity(intent);
-                    break;
+                    return true;
             }
 
             return false;
@@ -79,6 +80,19 @@ public class BaseActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(BaseActivity.this, ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    protected void simplified_top_navbar()
+    {
+        ImageView btn_back = findViewById(R.id.btn_back);
+
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(BaseActivity.this, HomeActivity.class);
                 startActivity(intent);
             }
         });

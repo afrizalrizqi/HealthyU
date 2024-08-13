@@ -3,20 +3,39 @@ package com.example.projectux;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class HomeActivity extends AppCompatActivity {
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+public class HomeActivity extends BaseActivity {
+    private static float bmi = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //        Remove Action Bar
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getSupportActionBar().hide();
+
         setContentView(R.layout.activity_home);
+
+//        Navbar Functionalities
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navbar);
+        bottomNavigationView.setSelectedItemId(R.id.menu_beranda);
+
+        top_navbar();
+        bottom_navbar();
 
         EditText editTextBerat = findViewById(R.id.beratBadanInput);
         EditText editTextTinggi = findViewById(R.id.tinggiBadanInput);
@@ -25,6 +44,13 @@ public class HomeActivity extends AppCompatActivity {
         ImageView notifIcon = findViewById(R.id.notificationIcon);
         TextView categoryTextView = findViewById(R.id.categoryBMI);
 
+        if (bmi == -1)
+        {
+            categoryTextView.setTextColor(Color.RED);
+            categoryTextView.setText("Cek skor BMI Anda sekarang!");
+            categoryTextView.setTextSize(14);
+        }
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -32,17 +58,18 @@ public class HomeActivity extends AppCompatActivity {
                 String weightStr = editTextBerat.getText().toString();
 
                 if (heightStr.isEmpty() || weightStr.isEmpty()) {
-                    Toast.makeText(HomeActivity.this, "Please enter both height and weight", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(HomeActivity.this, "Masukkan tinggi dan berat badan Anda!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 try {
                     float height = Float.parseFloat(heightStr) / 100;
                     float weight = Float.parseFloat(weightStr);
-                    float bmi = weight / (height * height);
+                    bmi = weight / (height * height);
                     textView.setText(String.valueOf(bmi));
 
                     String bmiCategory = getBMICategory(bmi, categoryTextView);
+                    categoryTextView.setTextSize(18);
                     categoryTextView.setText(bmiCategory);
                 } catch (NumberFormatException e) {
                     Toast.makeText(HomeActivity.this, "Invalid input", Toast.LENGTH_SHORT).show();

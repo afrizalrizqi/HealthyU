@@ -40,17 +40,8 @@ public class ProfileActivity extends BaseActivity {
 
         setContentView(R.layout.activity_profile);
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navbar);
-        bottomNavigationView.setSelectedItemId(R.id.menu_penjadwalan);
-
-        top_navbar();
-//        bottom_navbar();
-        bottomNavigationView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bottom_navbar();
-            }
-        });
+//        Navbar Functionalities
+        simplified_top_navbar();
 
         txt_username = findViewById(R.id.txt_username);
         txt_nama_lengkap = findViewById(R.id.txt_nama_lengkap);
@@ -70,7 +61,6 @@ public class ProfileActivity extends BaseActivity {
 
         if (User.user.getNomor_telepon() == null)
         {
-            System.out.println("aaaaaaaaaaaaaa" + User.user.getNomor_telepon());
             txt_nomor_telepon.setHint("Lengkapi Nomor Telepon!");
             txt_nomor_telepon.setHintTextColor(Color.RED);
         } else

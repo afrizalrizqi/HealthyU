@@ -12,12 +12,15 @@
         android:theme="@style/Theme.ProjectUX"
         tools:targetApi="31">
         <activity
+            android:name=".TambahAlamatActivity"
+            android:exported="false" />
+        <activity
             android:name=".BaseActivity"
             android:exported="false" />
         <activity
             android:name=".konfirmasi_jadwal_tes_langsung"
             android:exported="false"
-            android:label="@string/title_activity_konfirmasi_jadwal_tes_langsung"/>
+            android:label="@string/title_activity_konfirmasi_jadwal_tes_langsung" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".konfirmasi_jadwal_home_service" />
         <activity
@@ -31,17 +34,16 @@
             android:exported="false" />
         <activity
             android:name=".NotificationActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".HomeActivity"
-            android:exported="false"/>
-
-
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
