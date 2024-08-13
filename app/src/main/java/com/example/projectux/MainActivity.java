@@ -94,11 +94,13 @@ public class MainActivity extends AppCompatActivity {
                         public void onClick(DialogInterface dialog, int which) {
                             Toast.makeText(MainActivity.this, "Akun telah berhasil dibuat!", Toast.LENGTH_SHORT).show();
 
-//                            Set User
+                            Set User
                             new User(username.getText().toString(), namalengkap.getText().toString(),
                                     nik.getText().toString(), email.getText().toString(), password.getText().toString());
 
                             Intent intent =  new Intent(MainActivity.this, ProfileActivity.class);
+
+//                            Intent intent =  new Intent(MainActivity.this,konfirmasi_jadwal_home_service.class);
                             startActivity(intent);
                             finish();
                         }

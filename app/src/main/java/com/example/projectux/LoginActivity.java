@@ -63,7 +63,7 @@ public class LoginActivity extends AppCompatActivity {
                 }else if (!username.getText().toString().equals(User.user.getUsername()) || !password.getText().toString().equals(User.user.getPassword())){
                     Toast.makeText(LoginActivity.this, "Username atau Kata Sandi tidak valid!", Toast.LENGTH_SHORT).show();
                 }else{
-                    Intent intent =  new Intent(LoginActivity.this,konfirmasi_jadwal_tes_langsung.class);
+                    Intent intent =  new Intent(LoginActivity.this, HomeActivity.class);
                     startActivity(intent);
                     finish();
                 }
