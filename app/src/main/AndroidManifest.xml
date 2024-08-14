@@ -42,6 +42,9 @@
             android:name=".HomeActivity"
             android:exported="false" />
         <activity
+            android:name=".RiwayatPasien"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -53,6 +56,8 @@
         <activity android:name=".TesActivity" />
         <activity android:name=".CariLabActivity" />
         <activity android:name=".BookingTesActivity" />
+        <activity android:name=".DetailTesActivity"/>
+        <activity android:name=".RiwayatPasienActivity" />
     </application>
 
 </manifest>

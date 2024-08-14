@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:background="@color/white"
+    android:elevation="4dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/nama_tes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            tools:text="Nama Tes" />
+
+        <TextView
+            android:id="@+id/lokasi_tes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nama_tes"
+            android:layout_marginTop="16dp"
+            android:drawableLeft="@drawable/baseline_location_on_24"
+            android:drawablePadding="8dp"
+            tools:text="Lokasi"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/tanggal_tes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lokasi_tes"
+            android:layout_marginTop="8dp"
+            android:drawableLeft="@drawable/baseline_calendar_month_24"
+            android:drawablePadding="8dp"
+            tools:text="Tanggal"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/waktu_tes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tanggal_tes"
+            android:layout_marginTop="8dp"
+            android:drawableLeft="@drawable/baseline_access_time_filled_24"
+            android:drawablePadding="8dp"
+            tools:text="Waktu"
+            android:textColor="@color/black"/>
+
+        <LinearLayout
+            android:id="@+id/status_grid"
+            android:layout_marginTop="40dp"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="8dp"
+                android:text="Status :"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:id="@+id/status_tes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:drawableLeft="@drawable/baseline_note_alt_24"
+                android:drawablePadding="8dp"
+                android:text="Status"
+                android:textColor="@color/black"/>
+
+        </LinearLayout>
+
+
+
+
+        <Button
+            android:id="@+id/btn_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/status_grid"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="20dp"
+            android:backgroundTint="@android:color/holo_orange_light"
+            android:text="Lihat Detail"
+            android:textColor="@color/black"
+            android:textAllCaps="false"
+            android:textStyle="bold"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#60A5A3A3"
+            android:layout_below="@id/nama_tes"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"/>
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>
