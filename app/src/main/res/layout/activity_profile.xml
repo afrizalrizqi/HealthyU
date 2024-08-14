@@ -4,174 +4,148 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="50dp"
+    android:background="@color/background"
     tools:context=".ProfileActivity">
 
-    <LinearLayout
+    <include
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Profil"
-            style="@style/Heading1"/>
+        android:layout_height="70dp"
+        layout="@layout/simplified_action_bar" />
 
-        <TextView
-            android:id="@+id/link_ubah"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ubah"
-            style="@style/Hyperlink"
-            android:layout_gravity="right"/>
-
-        <ImageView
-            android:id="@+id/profile_pic"
-            android:layout_width="109dp"
-            android:layout_height="109dp"
-            android:background="@drawable/ic_launcher_background"
-            android:layout_gravity="center_horizontal"/>
-
-<!--        Username Field-->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15.2dp"
-            android:layout_marginLeft="5dp"
-            android:text="Username"
-            style="@style/ContentHeader"/>
-
-        <TextView
-            android:id="@+id/txt_username"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="9dp"
-            android:text="Username"
-            />
+            android:layout_below="@id/toolbar"
+            android:paddingVertical="20dp"
+            android:paddingHorizontal="50dp">
 
-        <View
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/grey"
-            android:layout_marginTop="15dp"/>
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Profil"
+                style="@style/Heading1"/>
 
-        <!--        Nama Lengkap Field-->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15.2dp"
-            android:layout_marginLeft="5dp"
-            android:text="Nama Lengkap"
-            style="@style/ContentHeader"/>
+            <TextView
+                android:id="@+id/link_ubah"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ubah"
+                style="@style/Hyperlink"
+                android:layout_gravity="right"/>
 
-        <TextView
-            android:id="@+id/txt_nama_lengkap"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="9dp"
-            android:text="Nama Lengkap"
-            />
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_pic"
+                android:layout_width="109dp"
+                android:layout_height="109dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/dummy_profile"/>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/grey"
-            android:layout_marginTop="15dp"/>
+    <!--        Username Field-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15.2dp"
+                android:layout_marginLeft="5dp"
+                android:text="Username"
+                style="@style/ContentHeader"/>
 
-        <!--        NIK Field-->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15.2dp"
-            android:layout_marginLeft="5dp"
-            android:text="NIK"
-            style="@style/ContentHeader"/>
+            <EditText
+                android:id="@+id/txt_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Username"
+                style="@style/ContentSubHeader"
+                android:inputType="text"
+                android:textSize="14dp"
+                />
 
-        <TextView
-            android:id="@+id/txt_nik"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="9dp"
-            android:text="NIK"
-            />
+            <!--        Nama Lengkap Field-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15.2dp"
+                android:layout_marginLeft="5dp"
+                android:text="Nama Lengkap"
+                style="@style/ContentHeader"/>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/grey"
-            android:layout_marginTop="15dp"/>
+            <EditText
+                android:id="@+id/txt_nama_lengkap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nama Lengkap"
+                style="@style/ContentSubHeader"
+                android:inputType="text"
+                android:textSize="14dp"
+                />
 
-        <!--        Nama Lengkap Field-->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15.2dp"
-            android:layout_marginLeft="5dp"
-            android:text="Email"
-            style="@style/ContentHeader"/>
 
-        <TextView
-            android:id="@+id/txt_email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="9dp"
-            android:text="Email"
-            />
+            <!--        NIK Field-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15.2dp"
+                android:layout_marginLeft="5dp"
+                android:text="NIK"
+                style="@style/ContentHeader"/>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/grey"
-            android:layout_marginTop="15dp"/>
+            <EditText
+                android:id="@+id/txt_nik"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="NIK"
+                android:fontFamily="@font/poppins_light"
+                android:textColor="@color/detail_grey"
+                android:inputType="number"
+                android:textSize="14dp"
+                />
 
-        <!--        Nomor Telepon Field-->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15.2dp"
-            android:layout_marginLeft="5dp"
-            android:text="Nomor Telepon"
-            style="@style/ContentHeader"/>
 
-        <TextView
-            android:id="@+id/txt_nomor_telepon"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="9dp"
-            android:text="Nomor Telepon"
-            />
+            <!--        Nama Lengkap Field-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15.2dp"
+                android:layout_marginLeft="5dp"
+                android:text="Email"
+                style="@style/ContentHeader"/>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/grey"
-            android:layout_marginTop="15dp"/>
+            <EditText
+                android:id="@+id/txt_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                style="@style/ContentSubHeader"
+                android:inputType="textEmailAddress"
+                android:textSize="14dp"
+                />
 
-        <!--        Alamat Field-->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15.2dp"
-            android:layout_marginLeft="5dp"
-            android:text="Alamat"
-            style="@style/ContentHeader"/>
 
-        <TextView
-            android:id="@+id/txt_nama_alamat"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="9dp"
-            android:text="Nama Alamat"
-            style="@style/ContentSubHeader"/>
+            <!--        Nomor Telepon Field-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15.2dp"
+                android:layout_marginLeft="5dp"
+                android:text="Nomor Telepon"
+                style="@style/ContentHeader"/>
 
-        <TextView
-            android:id="@+id/txt_detail_alamat"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="9dp"
-            android:text="Jalan Pakuan No.5"
-            style="@style/ContentDetail"/>
+            <EditText
+                android:id="@+id/txt_nomor_telepon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nomor Telepon"
+                android:inputType="phone"
+                style="@style/ContentSubHeader"
+                android:textSize="14dp"
+                />
 
-    </LinearLayout>
+        </LinearLayout>
+
+        </RelativeLayout>
 
 </RelativeLayout>

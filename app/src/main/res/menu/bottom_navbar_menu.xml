@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_penjadwalan"
+        android:icon="@drawable/date_range"
+        android:titleTextAppearance="@style/bottom_navbar_menu_style"
+        android:title="Penjadwalan" />
+
+    <item
+        android:id="@+id/menu_beranda"
+        android:icon="@drawable/home"
+        android:titleTextAppearance="@style/bottom_navbar_menu_style"
+        android:title="Beranda"/>
+
+    <item
+        android:id="@+id/menu_riwayat"
+        android:icon="@drawable/desk_alt_duotone_line"
+        android:titleTextAppearance="@style/bottom_navbar_menu_style"
+        android:title="Riwayat"/>
+
+</menu>

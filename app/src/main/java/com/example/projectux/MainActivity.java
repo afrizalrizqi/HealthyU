@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -28,6 +30,12 @@ public class MainActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
+
+        //        Remove Action Bar
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getSupportActionBar().hide();
+
         setContentView(R.layout.activity_main);
 
         username=findViewById(R.id.username);
@@ -75,19 +83,19 @@ public class MainActivity extends AppCompatActivity {
                 if(username.getText().toString().equals("")){
                     Toast.makeText(MainActivity.this, "Username tidak boleh kosong!", Toast.LENGTH_SHORT).show();
                 }else if (username.getText().toString().length()<5){
-                    Toast.makeText(MainActivity.this, "Username harus lebih dari 5!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Username harus minimal 5 karakter!", Toast.LENGTH_SHORT).show();
                 } else if (namalengkap.getText().toString().equals("")) {
                     Toast.makeText(MainActivity.this, "Nama Lengkap tidak boleh kosong!", Toast.LENGTH_SHORT).show();
                 } else if (nik.getText().toString().equals("")) {
                     Toast.makeText(MainActivity.this, "NIK tidak boleh kosong!", Toast.LENGTH_SHORT).show();
                 } else if (email.getText().toString().equals("")) {
                     Toast.makeText(MainActivity.this, "Email tidak boleh kosong!", Toast.LENGTH_SHORT).show();
-                } else if (!email.getText().toString().contains("@gmail.com")) {
-                    Toast.makeText(MainActivity.this, "Email harus memiliki @gmail.com!", Toast.LENGTH_SHORT).show();
+                } else if (!email.getText().toString().endsWith("@gmail.com")) {
+                    Toast.makeText(MainActivity.this, "Email harus berakhiran @gmail.com!", Toast.LENGTH_SHORT).show();
                 } else if (password.getText().toString().equals("")) {
                     Toast.makeText(MainActivity.this, "Kata Sandi tidak boleh kosong!", Toast.LENGTH_SHORT).show();
                 }else if (password.getText().toString().length()<8){
-                    Toast.makeText(MainActivity.this, "Kata Sandi harus lebih dari 8!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Kata Sandi harus minimal 8 karakter!", Toast.LENGTH_SHORT).show();
                 } else{
                     AlertDialog dialog = new AlertDialog.Builder(MainActivity.this).create();
                     dialog.setTitle("Konfirmasi");
@@ -96,8 +104,16 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             Toast.makeText(MainActivity.this, "Akun telah berhasil dibuat!", Toast.LENGTH_SHORT).show();
-                            Intent intent =  new Intent(MainActivity.this,LoginActivity.class);
+
+//                            Set User
+                            new User(username.getText().toString(), namalengkap.getText().toString(),
+                                    nik.getText().toString(), email.getText().toString(), password.getText().toString());
+
+                            Intent intent =  new Intent(MainActivity.this, LoginActivity.class);
+
+//                            Intent intent =  new Intent(MainActivity.this,konfirmasi_jadwal_home_service.class);
                             startActivity(intent);
+                            finish();
                         }
                     });
                     dialog.setButton(DialogInterface.BUTTON_NEGATIVE, "TUTUP", new DialogInterface.OnClickListener() {

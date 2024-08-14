@@ -4,3 +4,21 @@
     <solid android:color="#0080cd" />
     <corners android:radius="10dp" />
 </shape>
+<!--<layer-list xmlns:android="http://schemas.android.com/apk/res/android">-->
+<!--    <item>-->
+<!--        <shape android:shape="rectangle">-->
+<!--            <solid android:color="#00000000"/> &lt;!&ndash; Transparent background &ndash;&gt;-->
+<!--            <corners android:radius="4dp"/> &lt;!&ndash; Shadow radius &ndash;&gt;-->
+<!--            <padding-->
+<!--                android:bottom="2dp"-->
+<!--                android:left="2dp"-->
+<!--                android:right="2dp"-->
+<!--                android:top="70dp"/>-->
+<!--            <gradient-->
+<!--                android:angle="90"-->
+<!--                android:endColor="#80000000"-->
+<!--            android:startColor="#00000000"-->
+<!--            android:type="linear"/>-->
+<!--        </shape>-->
+<!--    </item>-->
+<!--</layer-list>-->
