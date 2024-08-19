@@ -1,10 +1,12 @@
 package com.example.projectux;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -30,12 +32,25 @@ public class HomeActivity extends BaseActivity {
 
         setContentView(R.layout.activity_home);
 
-//        Navbar Functionalities
+        top_navbar();
+
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navbar);
         bottomNavigationView.setSelectedItemId(R.id.menu_beranda);
-
-        top_navbar();
         bottom_navbar();
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.menu_penjadwalan:
+                        Intent intent = new Intent(getApplicationContext(), TesActivity.class);
+                        startActivity(intent);
+                        return true;
+                    // handle other menu items if any
+                }
+                return false;
+            }
+        });
+
 
         EditText editTextBerat = findViewById(R.id.beratBadanInput);
         EditText editTextTinggi = findViewById(R.id.tinggiBadanInput);
@@ -84,6 +99,8 @@ public class HomeActivity extends BaseActivity {
                 startActivity(intent);
             }
         });
+
+
     }
 
     private String getBMICategory(float bmi, TextView categoryTextView){

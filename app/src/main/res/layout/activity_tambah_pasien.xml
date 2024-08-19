@@ -5,9 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TambahPasienActivity">
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        layout="@layout/custom_action_bar"
+        />
 
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+    <LinearLayout
+        android:layout_marginTop="20dp"
         android:id="@+id/input_field"
+        android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -99,14 +112,33 @@
         </RadioGroup>
 
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="end|bottom"
+        >
 
-    <androidx.appcompat.widget.AppCompatButton
-        style="@style/btn_style"
-        android:layout_gravity="bottom"
-        android:layout_marginBottom="20dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:text="Tambah"
-        android:background="@drawable/rounded_button"/>
+        <Button
+            android:id="@+id/btn_tambah"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tambah"
+            android:fontFamily="@font/poppins_regular"
+            android:background="@drawable/buttonselanjutnya"
+            android:textAllCaps="false"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <include
+            android:id="@+id/bottomNavbar"
+            layout="@layout/custom_navbar"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_alignParentBottom="true" />
+    </LinearLayout>
+    </LinearLayout>
 
 </RelativeLayout>

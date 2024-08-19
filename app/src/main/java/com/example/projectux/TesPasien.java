@@ -6,6 +6,7 @@ public class TesPasien {
     private String tanggal;
     private String waktu;
     private String status;
+    private Pasien pasien;
 
     public TesPasien(String namaTes, String lokasi, String tanggal, String waktu, String status) {
         this.namaTes = namaTes;
@@ -54,4 +55,10 @@ public class TesPasien {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    public void setPasien(Pasien pasien) {
+        this.pasien = pasien;
+    }
+
 }
+

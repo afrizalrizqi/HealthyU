@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <item name="namalengkap" type="id" />
+    <item name="nik" type="id" />
+    <item name="email" type="id" />
+    <item name="register" type="id" />
+    <item name="bookingtes" type="id" />
+    <item name="ke_login" type="id" />
+    <item name="spinnerlayanan" type="id" />
 </resources>

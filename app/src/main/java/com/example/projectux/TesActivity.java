@@ -1,7 +1,12 @@
 package com.example.projectux;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.AdapterView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -15,7 +20,7 @@ import com.example.projectux.TestItem;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TesActivity extends AppCompatActivity {
+public class TesActivity extends BaseActivity {
 
     private RecyclerView recyclerView;
     private TestAdapter adapter;
@@ -25,7 +30,15 @@ public class TesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getSupportActionBar().hide();
+
         setContentView(R.layout.cari_tes);
+
+        top_navbar();
+        bottom_navbar();
 
         recyclerView = findViewById(R.id.recyclerViewCariTes);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 3));
@@ -41,6 +54,7 @@ public class TesActivity extends AppCompatActivity {
 
         adapter = new TestAdapter(this, testItemList);
         recyclerView.setAdapter(adapter);
+
     }
 
 }

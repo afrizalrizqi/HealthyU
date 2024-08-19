@@ -36,7 +36,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.namaView.setText(pasiens.get(position).getNama());
-        holder.jenisKelaminView.setText(pasiens.get(position).getJenisKelamin());
+        holder.jenisKelaminView.setText(pasiens.get(position).getGender());
         holder.lihatTesBtn.setText("Lihat Tes");
 
         holder.lihatTesBtn.setOnClickListener(new View.OnClickListener() {
@@ -45,7 +45,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
                 Context context = view.getContext();
                 Intent intent = new Intent(context, DetailTesActivity.class);
                 intent.putExtra("nama_pasien", pasiens.get(holder.getAdapterPosition()).getNama());
-                intent.putExtra("nik_pasien", pasiens.get(holder.getAdapterPosition()).getNik());
+                intent.putExtra("nik_pasien", pasiens.get(holder.getAdapterPosition()).getNIK());
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
             }

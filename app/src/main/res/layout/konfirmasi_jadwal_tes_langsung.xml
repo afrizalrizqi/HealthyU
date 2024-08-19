@@ -3,10 +3,20 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:layout_marginLeft="11dp">
+    android:orientation="vertical">
 
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        layout="@layout/custom_action_bar"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:layout_marginLeft="11dp"
+        android:orientation="vertical">
     <TextView
         android:id="@+id/tvLocationTitle"
         android:layout_width="wrap_content"
@@ -64,8 +74,8 @@
         android:layout_gravity="center"
         android:background="@color/divider" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
@@ -82,14 +92,14 @@
 
         <TextView
             android:id="@+id/ubahInfo"
-            android:layout_width="215dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_regular"
-            android:gravity="right"
+            android:layout_alignParentEnd="true"
             android:text="Ubah"
             android:textColor="@color/black" />
 
-    </LinearLayout>
+    </RelativeLayout>
 
 
 
@@ -252,5 +262,12 @@
         android:layout_marginBottom="16dp"
         android:textColor="@color/black"/>
 
+    </LinearLayout>
+    <include
+        android:id="@+id/bottomNavbar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        layout="@layout/custom_navbar" />
 
 </LinearLayout>

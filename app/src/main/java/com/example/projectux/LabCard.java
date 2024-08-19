@@ -1,5 +1,7 @@
 package com.example.projectux;
 
+import android.widget.Button;
+
 public class LabCard {
     private String name;
     private String address;
@@ -21,5 +23,6 @@ public class LabCard {
     public String getHours() { return hours; }
     public String getPhone() { return phone; }
     public int getImageResId() { return imageResId; }
+
 }
 

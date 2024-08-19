@@ -1,14 +1,21 @@
 package com.example.projectux;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.text.SimpleDateFormat;
@@ -17,14 +24,32 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
-public class BookingTesActivity extends AppCompatActivity {
+public class BookingTesActivity extends BaseActivity {
 
     private GridLayout calendarGrid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getSupportActionBar().hide();
+
         setContentView(R.layout.bookingtes);
+
+        if(pasienList.size() == 0){
+            pasienList.add(new Pasien("Jeremy", "Laki-Laki", "12312313131" , "081231231331",  false));
+            pasienList.add(new Pasien("Advenia", "Laki-Laki","12312313131", "081231231331",  false));
+            pasienList.add(new Pasien("Louwis", "Laki-Laki","12312313131", "081231231331",  false));
+        }
+
+        if (alamatList.isEmpty()) {
+            alamatList.add(new Alamat("Rumah", "Jl. Pakuan No. 5" ));
+            alamatList.add(new Alamat("Kantor", "Jl. Sei Kera No. 77"));
+            alamatList.add(new Alamat("Rumah Lama", "Jl. Tikus No. 10"));
+        }
+
 
         calendarGrid = findViewById(R.id.calendarGrid);
 
@@ -37,14 +62,13 @@ public class BookingTesActivity extends AppCompatActivity {
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        Spinner spinner = findViewById(R.id.spinnerlayanan);
-        spinner.setAdapter(adapter);
-
         Calendar calendar = Calendar.getInstance();
         generateCalendar(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH));
 
         GridLayout timeGrid = findViewById(R.id.timeGrid);
 
+        Spinner spinner = findViewById(R.id.spinnerlayanan);
+        spinner.setAdapter(adapter);
 
         timeGrid.removeAllViews();
 
@@ -149,6 +173,34 @@ public class BookingTesActivity extends AppCompatActivity {
 
             timeGrid.addView(timeCardView);
         }
+        Button bookingButton = findViewById(R.id.bookingButton);
+        String labName = getIntent().getStringExtra("labName");
+        bookingButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String bookingDay = ((TextView) findViewById(R.id.bookingDay)).getText().toString();
+                String bookingTime = selectedTimeView[0] != null ? selectedTimeView[0].getText().toString() : null;
+
+                if (bookingDay.equals("Tanggal") || selectedTimeView[0] == null) {
+                    Toast.makeText(BookingTesActivity.this, "Mohon mengisi hari pemesanan dan waktu pemesanan", Toast.LENGTH_SHORT).show();
+                } else {
+                    String selectedItem = spinner.getSelectedItem().toString();
+                    if (selectedItem.equals("Tes Lab")) {
+                        Intent intent = new Intent(BookingTesActivity.this, konfirmasi_jadwal_tes_langsung.class);
+                        intent.putExtra("labName", labName);
+                        TesPasienHolder.getInstance().getTesPasien().setTanggal(bookingDay);
+                        TesPasienHolder.getInstance().getTesPasien().setWaktu(bookingTime);
+                        startActivity(intent);
+                    } else {
+                        Intent intent = new Intent(BookingTesActivity.this, konfirmasi_jadwal_home_service.class);
+                        intent.putExtra("labName", labName);
+                        TesPasienHolder.getInstance().getTesPasien().setTanggal(bookingDay);
+                        TesPasienHolder.getInstance().getTesPasien().setWaktu(bookingTime);
+                        startActivity(intent);
+                    }
+                }
+            }
+        });
     }
 
 

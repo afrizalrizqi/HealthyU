@@ -1,5 +1,6 @@
 package com.example.projectux;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,7 +18,8 @@ import java.util.List;
 public class UbahInformasiPasienAdapter extends RecyclerView.Adapter<UbahInformasiPasienAdapter.PasienViewHolder>
 {
     private List<Pasien> pasienList;
-    private int lastSelectedPosition = -1;
+    private static int lastSelectedPosition = 0;
+
 
     public UbahInformasiPasienAdapter(List<Pasien> pasienList) {
         this.pasienList = pasienList;
@@ -51,11 +53,16 @@ public class UbahInformasiPasienAdapter extends RecyclerView.Adapter<UbahInforma
         });
 
         holder.radioButton.setChecked(lastSelectedPosition == position);
+        pasien.initializeSelected(pasienList, lastSelectedPosition);
     }
 
     @Override
     public int getItemCount() {
         return pasienList.size();
+    }
+
+    public int getLastSelectedPosition () {
+        return lastSelectedPosition;
     }
 
     public class PasienViewHolder extends RecyclerView.ViewHolder

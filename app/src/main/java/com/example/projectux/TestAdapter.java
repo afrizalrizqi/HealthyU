@@ -63,12 +63,15 @@ public class TestAdapter extends RecyclerView.Adapter<TestAdapter.TestViewHolder
         layoutParams.setMargins(16, 16, 16, 16); // Set margin around each item
         holder.cardView.setLayoutParams(layoutParams);
 
-        holder.cardView.setOnClickListener(new View.OnClickListener() {
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, CariLabActivity.class);
-                context.startActivity(intent);
+                TestItem clickedTestItem = testItemList.get(position);
+                Intent intent = new Intent(v.getContext(), CariLabActivity.class);
+                TesPasienHolder.getInstance().getTesPasien().setNamaTes(clickedTestItem.getTitle());
+                v.getContext().startActivity(intent);
             }
         });
+
     }
 }

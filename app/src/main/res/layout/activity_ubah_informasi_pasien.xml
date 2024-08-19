@@ -5,75 +5,123 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    android:paddingHorizontal="22dp"
     tools:context=".UbahInformasiPasienActivity">
 
-    <TextView
-        android:id="@+id/page_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Pilih Pasien"
-        style="@style/Heading1"/>
-
-    <View
-        android:id="@+id/divider"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_below="@id/page_title"
-        android:background="@color/grey"
-        android:layout_marginTop="17dp"/>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/list_pasien"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/divider"/>
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/custom_action_bar" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_below="@id/list_pasien">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="80dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingHorizontal="22dp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <TextView
+                        android:id="@+id/page_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Pilih Pasien"
+                        style="@style/Heading1"/>
 
+                    <View
+                        android:id="@+id/divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@id/page_title"
+                        android:background="@color/grey"
+                        android:layout_marginTop="17dp"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/list_pasien"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/divider"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_below="@id/list_pasien">
+
+                        <LinearLayout
+                            android:id="@+id/tambahPasien"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="11.25dp"
+                                android:layout_height="11.25dp"
+                                android:src="@drawable/add_ring"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingVertical="20dp"
+                                android:layout_marginLeft="4dp"
+                                android:layout_gravity="center"
+                                android:text="Tambah Pasien"
+                                style="@style/ContentDetail"
+                                android:textColor="@color/black"/>
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_below="@id/page_title"
+                            android:background="@color/grey"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="vertical"
+            android:gravity="end|bottom"
+            >
 
-            <ImageView
-                android:layout_width="11.25dp"
-                android:layout_height="11.25dp"
-                android:src="@drawable/add_ring"/>
-
-            <TextView
-                android:layout_width="wrap_content"
+            <Button
+                android:id="@+id/btn_pilih"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingVertical="20dp"
-                android:layout_marginLeft="4dp"
-                android:layout_gravity="center"
-                android:text="Tambah Pasien"
-                style="@style/ContentDetail"
-                android:textColor="@color/black"/>
-        </LinearLayout>
+                android:text="Selanjutnya"
+                android:fontFamily="@font/poppins_regular"
+                android:background="@drawable/buttonselanjutnya"
+                android:textAllCaps="false"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_below="@id/page_title"
-            android:background="@color/grey"/>
+            <include
+                android:id="@+id/bottomNavbar"
+                layout="@layout/custom_navbar"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_alignParentBottom="true" />
+        </LinearLayout>
 
     </LinearLayout>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_pilih"
-        style="@style/btn_style"
-        android:layout_gravity="bottom"
-        android:layout_marginBottom="20dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:text="Pilih"
-        android:background="@drawable/rounded_button"/>
 
 </RelativeLayout>

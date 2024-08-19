@@ -23,10 +23,16 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class BaseActivity extends AppCompatActivity {
     Toolbar toolbar;
+    public static List<Pasien> pasienList = new ArrayList<>();
+    public static List<Alamat> alamatList = new ArrayList<>();
+    public static Pasien SelectedPasien;
+    public static Alamat SelectedAlamat;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,9 +48,8 @@ public class BaseActivity extends AppCompatActivity {
             switch (item.getItemId())
             {
                 case R.id.menu_penjadwalan:
-                    Toast.makeText(this, "Penjadwalan", Toast.LENGTH_SHORT).show();
-//                    intent = new Intent();
-//                    startActivity(intent);
+                    intent = new Intent(this, TesActivity.class);
+                    startActivity(intent);
                     return true;
 
                 case R.id.menu_beranda:
@@ -53,9 +58,8 @@ public class BaseActivity extends AppCompatActivity {
                     return true;
 
                 case R.id.menu_riwayat:
-                    Toast.makeText(this, "Riwayat", Toast.LENGTH_SHORT).show();
-//                    intent = new Intent();
-//                    startActivity(intent);
+                    intent = new Intent(this, RiwayatPasienActivity.class);
+                    startActivity(intent);
                     return true;
             }
 
@@ -97,4 +101,5 @@ public class BaseActivity extends AppCompatActivity {
             }
         });
     }
+
 }
