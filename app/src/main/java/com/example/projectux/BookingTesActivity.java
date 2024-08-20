@@ -38,6 +38,15 @@ public class BookingTesActivity extends BaseActivity {
 
         setContentView(R.layout.bookingtes);
 
+        ImageView btn_back = findViewById(R.id.btn_back);
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(BookingTesActivity.this, CariLabActivity.class);
+                startActivity(intent);
+            }
+        });
+
         if(pasienList.size() == 0){
             pasienList.add(new Pasien("Jeremy", "Laki-Laki", "12312313131" , "081231231331",  false));
             pasienList.add(new Pasien("Advenia", "Laki-Laki","12312313131", "081231231331",  false));
@@ -65,11 +74,11 @@ public class BookingTesActivity extends BaseActivity {
         Calendar calendar = Calendar.getInstance();
         generateCalendar(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH));
 
-        GridLayout timeGrid = findViewById(R.id.timeGrid);
 
         Spinner spinner = findViewById(R.id.spinnerlayanan);
         spinner.setAdapter(adapter);
 
+        GridLayout timeGrid = findViewById(R.id.timeGrid);
         timeGrid.removeAllViews();
 
         List<String> timeRanges = new ArrayList<>();
@@ -80,8 +89,6 @@ public class BookingTesActivity extends BaseActivity {
         timeRanges.add("08:00 - 10:00");
 
         LayoutInflater inflater = LayoutInflater.from(this);
-
-
 
         final TextView[] selectedTimeView = {null};
 
@@ -173,6 +180,7 @@ public class BookingTesActivity extends BaseActivity {
 
             timeGrid.addView(timeCardView);
         }
+
         Button bookingButton = findViewById(R.id.bookingButton);
         String labName = getIntent().getStringExtra("labName");
         bookingButton.setOnClickListener(new View.OnClickListener() {
@@ -202,7 +210,6 @@ public class BookingTesActivity extends BaseActivity {
             }
         });
     }
-
 
     private void generateCalendar(int year, int month) {
         Calendar calendar = Calendar.getInstance();

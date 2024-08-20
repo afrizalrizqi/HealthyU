@@ -8,7 +8,9 @@
 
     <include
         android:id="@+id/toolbar"
-        layout="@layout/custom_action_bar" />
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        layout="@layout/simplified_action_bar" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -82,12 +84,12 @@
             android:layout_marginVertical="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             />
-        <include
-            android:id="@+id/bottomNavbar"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            layout="@layout/custom_navbar" />
+<!--        <include-->
+<!--            android:id="@+id/bottomNavbar"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="55dp"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            layout="@layout/custom_navbar" />-->
     </LinearLayout>
     </LinearLayout>
 

@@ -10,6 +10,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class TambahAlamatActivity extends BaseActivity {
@@ -26,8 +27,15 @@ public class TambahAlamatActivity extends BaseActivity {
         getSupportActionBar().hide();
 
         setContentView(R.layout.activity_tambah_alamat);
-        top_navbar();
-        bottom_navbar();
+
+        ImageView btn_back = findViewById(R.id.btn_back);
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TambahAlamatActivity.this, UbahAlamatActivity.class);
+                startActivity(intent);
+            }
+        });
 
         txt_nama_alamat = findViewById(R.id.txt_nama_alamat);
         txt_alamat_lengkap = findViewById(R.id.txt_alamat_lengkap);

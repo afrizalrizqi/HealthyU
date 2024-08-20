@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -34,8 +35,16 @@ public class TambahPasienActivity extends BaseActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();
         setContentView(R.layout.activity_tambah_pasien);
-        top_navbar();
-        bottom_navbar();
+
+        ImageView btn_back = findViewById(R.id.btn_back);
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TambahPasienActivity.this, UbahInformasiPasienActivity.class);
+                intent.putExtra("returnTo", getIntent().getStringExtra("returnTo"));
+                startActivity(intent);
+            }
+        });
 
         txt_nama = findViewById(R.id.txt_nama_lengkap);
         txt_nik = findViewById(R.id.txt_nik);

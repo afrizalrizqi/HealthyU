@@ -12,6 +12,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Adapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,10 +35,23 @@ public class UbahInformasiPasienActivity extends BaseActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();
 
-
         setContentView(R.layout.activity_ubah_informasi_pasien);
-        top_navbar();
-        bottom_navbar();
+
+        ImageView btn_back = findViewById(R.id.btn_back);
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+
+                if ("konfirmasi_jadwal_home_service".equals(getIntent().getStringExtra("returnTo"))) {
+                    intent = new Intent(UbahInformasiPasienActivity.this, konfirmasi_jadwal_home_service.class);
+                } else if ("konfirmasi_jadwal_tes_langsung".equals(getIntent().getStringExtra("returnTo"))) {
+                    intent = new Intent(UbahInformasiPasienActivity.this, konfirmasi_jadwal_tes_langsung.class);
+                }
+
+                startActivity(intent);
+            }
+        });
 
         LinearLayout tambahPasien = findViewById(R.id.tambahPasien);
 

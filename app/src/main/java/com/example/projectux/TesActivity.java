@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -39,6 +40,8 @@ public class TesActivity extends BaseActivity {
 
         top_navbar();
         bottom_navbar();
+
+//        bottom_navbar();
 
         recyclerView = findViewById(R.id.recyclerViewCariTes);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 3));

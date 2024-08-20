@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,8 +32,15 @@ public class UbahAlamatActivity extends BaseActivity {
 
         setContentView(R.layout.activity_ubah_alamat);
 
-        top_navbar();
-        bottom_navbar();
+        ImageView btn_back = findViewById(R.id.btn_back);
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(UbahAlamatActivity.this, konfirmasi_jadwal_home_service.class);
+                intent.putExtra("returnTo", "konfirmasi_jadwal_home_service");
+                startActivity(intent);
+            }
+        });
 
         recyclerView = findViewById(R.id.list_alamat);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

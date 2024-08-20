@@ -51,6 +51,11 @@ public class HomeActivity extends BaseActivity {
             categoryTextView.setTextColor(Color.RED);
             categoryTextView.setText("Cek skor BMI Anda sekarang!");
             categoryTextView.setTextSize(14);
+        } else {
+            String bmiCategory = getBMICategory(bmi, categoryTextView);
+            textView.setText(String.valueOf(bmi));
+            categoryTextView.setTextSize(18);
+            categoryTextView.setText(bmiCategory);
         }
 
         button.setOnClickListener(new View.OnClickListener() {

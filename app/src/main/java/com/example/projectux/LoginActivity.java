@@ -52,21 +52,21 @@ public class LoginActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(username.getText().toString().equals("")){
-                    Toast.makeText(LoginActivity.this, "Username tidak boleh kosong!", Toast.LENGTH_SHORT).show();
-                }else if (username.getText().toString().length()<5){
-                    Toast.makeText(LoginActivity.this, "Username harus minimal 5 karakter!", Toast.LENGTH_SHORT).show();
-                }else if (password.getText().toString().equals("")) {
-                    Toast.makeText(LoginActivity.this, "Kata Sandi tidak boleh kosong!", Toast.LENGTH_SHORT).show();
-                }else if (password.getText().toString().length()<8){
-                    Toast.makeText(LoginActivity.this, "Kata Sandi harus minimal 8 karakter!", Toast.LENGTH_SHORT).show();
-                }else if (!username.getText().toString().equals(User.user.getUsername()) || !password.getText().toString().equals(User.user.getPassword())){
-                    Toast.makeText(LoginActivity.this, "Username atau Kata Sandi tidak valid!", Toast.LENGTH_SHORT).show();
-                }else{
+//                if(username.getText().toString().equals("")){
+//                    Toast.makeText(LoginActivity.this, "Username tidak boleh kosong!", Toast.LENGTH_SHORT).show();
+//                }else if (username.getText().toString().length()<5){
+//                    Toast.makeText(LoginActivity.this, "Username harus minimal 5 karakter!", Toast.LENGTH_SHORT).show();
+//                }else if (password.getText().toString().equals("")) {
+//                    Toast.makeText(LoginActivity.this, "Kata Sandi tidak boleh kosong!", Toast.LENGTH_SHORT).show();
+//                }else if (password.getText().toString().length()<8){
+//                    Toast.makeText(LoginActivity.this, "Kata Sandi harus minimal 8 karakter!", Toast.LENGTH_SHORT).show();
+//                }else if (!username.getText().toString().equals(User.user.getUsername()) || !password.getText().toString().equals(User.user.getPassword())){
+//                    Toast.makeText(LoginActivity.this, "Username atau Kata Sandi tidak valid!", Toast.LENGTH_SHORT).show();
+//                }else{
                     Intent intent =  new Intent(LoginActivity.this, HomeActivity.class);
                     startActivity(intent);
                     finish();
-                }
+//                }
             }
         });
     }

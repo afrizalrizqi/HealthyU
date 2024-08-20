@@ -8,6 +8,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
@@ -31,8 +32,15 @@ public class CariLabActivity extends BaseActivity{
 
         setContentView(R.layout.cari_lab);
 
-        top_navbar();
-        bottom_navbar();
+        ImageView btn_back = findViewById(R.id.btn_back);
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CariLabActivity.this, TesActivity.class);
+                startActivity(intent);
+            }
+        });
+
         // Step 1: Create a list of LabCard objects
         labCardList = new ArrayList<>();
         labCardList.add(new LabCard("PT. Syslab", "Sentul City Plaza Amsterdam, Bogor Utara, Indonesia, Konoha",

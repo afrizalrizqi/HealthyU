@@ -9,7 +9,9 @@
 
     <include
         android:id="@+id/toolbar"
-        layout="@layout/custom_action_bar" />
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        layout="@layout/simplified_action_bar" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -101,7 +103,7 @@
             android:id="@+id/btn_pilih"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Selanjutnya"
+            android:text="Pilih"
             android:fontFamily="@font/poppins_regular"
             android:background="@drawable/buttonselanjutnya"
             android:textAllCaps="false"
@@ -110,12 +112,12 @@
             app:layout_constraintBottom_toBottomOf="parent"
             />
 
-        <include
-            android:id="@+id/bottomNavbar"
-            layout="@layout/custom_navbar"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_alignParentBottom="true" />
+<!--        <include-->
+<!--            android:id="@+id/bottomNavbar"-->
+<!--            layout="@layout/custom_navbar"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="55dp"-->
+<!--            android:layout_alignParentBottom="true" />-->
     </LinearLayout>
     </LinearLayout>
 

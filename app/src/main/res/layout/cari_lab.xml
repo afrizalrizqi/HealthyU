@@ -10,7 +10,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        layout="@layout/custom_action_bar" />
+        layout="@layout/simplified_action_bar" />
 
     <RelativeLayout
         android:layout_below="@id/toolbar"
@@ -40,12 +40,12 @@
             app:spanCount="1" />
 
 
-        <include
-            android:id="@+id/bottomNavbar"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_alignParentBottom="true"
-            layout="@layout/custom_navbar" />
+<!--        <include-->
+<!--            android:id="@+id/bottomNavbar"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="55dp"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            layout="@layout/custom_navbar" />-->
     </RelativeLayout>
 
 </RelativeLayout>

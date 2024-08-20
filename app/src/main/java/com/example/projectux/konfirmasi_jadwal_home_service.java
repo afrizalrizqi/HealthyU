@@ -2,16 +2,22 @@ package com.example.projectux;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Paint;
+import android.media.Image;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 
 public class konfirmasi_jadwal_home_service extends BaseActivity {
@@ -28,13 +34,21 @@ public class konfirmasi_jadwal_home_service extends BaseActivity {
 
         setContentView(R.layout.konfirmasi_jadwal_home_service);
 
-        top_navbar();
-        bottom_navbar();
+//        top_navbar();
+//        bottom_navbar();
+        ImageView btn_back = findViewById(R.id.btn_back);
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(konfirmasi_jadwal_home_service.this, BookingTesActivity.class);
+                startActivity(intent);
+            }
+        });
 
         jadwalkanTes=findViewById(R.id.jadwalkanTes);
 
         textView= (TextView)findViewById(R.id.ubahInfo);
-        textView.setPaintFlags(textView.getPaintFlags()| Paint.UNDERLINE_TEXT_FLAG);
+//        textView.setPaintFlags(textView.getPaintFlags()| Paint.UNDERLINE_TEXT_FLAG);
 
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,13 +62,14 @@ public class konfirmasi_jadwal_home_service extends BaseActivity {
         jadwalkanTes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent =  new Intent(konfirmasi_jadwal_home_service.this,SuccessActivity.class);
-                startActivity(intent);
+//                Intent intent =  new Intent(konfirmasi_jadwal_home_service.this,SuccessActivity.class);
+//                startActivity(intent);
+                showAlertDialog();
             }
         });
 
         TextView ubahInfoAlamat = findViewById(R.id.ubahInfoAlamat);
-        textView.setPaintFlags(textView.getPaintFlags()| Paint.UNDERLINE_TEXT_FLAG);
+//        textView.setPaintFlags(textView.getPaintFlags()| Paint.UNDERLINE_TEXT_FLAG);
         ubahInfoAlamat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,8 +90,6 @@ public class konfirmasi_jadwal_home_service extends BaseActivity {
         namaTesView.setText(namaTes);
         tanggalTesView.setText(tanggalTes);
         jamTesView.setText(jamTes);
-
-
 
 //        SelectedAlamat = (Alamat) getIntent().getSerializableExtra("selectedAlamat");
         TextView namaAlamat = findViewById(R.id.namaLokasi);
@@ -101,5 +114,35 @@ public class konfirmasi_jadwal_home_service extends BaseActivity {
         noTelp.setText(SelectedPasien.getNo_telp());
         gender.setText(SelectedPasien.getGender());
 
+    }
+
+    private void showAlertDialog() {
+        // Inflater untuk custom alert dialog layout
+        LayoutInflater inflater = getLayoutInflater();
+        View dialogView = inflater.inflate(R.layout.success, null);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(konfirmasi_jadwal_home_service.this);
+        builder.setView(dialogView);
+
+        AlertDialog alertDialog = builder.create();
+
+        ImageView btnClose = dialogView.findViewById(R.id.closeButton);
+        btnClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(konfirmasi_jadwal_home_service.this, HomeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // Tampilkan dialog
+        alertDialog.show();
+
+        // Set ukuran dialog agar sesuai
+        WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
+        layoutParams.copyFrom(alertDialog.getWindow().getAttributes());
+        layoutParams.width = WindowManager.LayoutParams.WRAP_CONTENT;
+        layoutParams.height = WindowManager.LayoutParams.WRAP_CONTENT;
+        alertDialog.getWindow().setAttributes(layoutParams);
     }
 }

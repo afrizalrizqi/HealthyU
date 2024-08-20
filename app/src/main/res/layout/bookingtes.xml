@@ -9,7 +9,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        layout="@layout/custom_action_bar" />
+        layout="@layout/simplified_action_bar" />
 
     <LinearLayout
         android:layout_below="@id/toolbar"
@@ -36,41 +36,46 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Pilih Jadwal Test"
-                    android:fontFamily="@font/poppins_medium"
                     android:textSize="18sp"
-                    android:textStyle="bold"
                     android:textColor="@color/black"
                     android:layout_marginLeft="10dp"
                     tools:ignore="MissingConstraints" />
 
                 <LinearLayout
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-
                     android:paddingHorizontal="10dp">
 
                     <TextView
                         android:id="@+id/bookingDay"
-                        android:layout_width="wrap_content"
+                        android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="10dp"
                         android:background="@drawable/boxborder"
                         android:gravity="center"
+                        android:fontFamily="@font/poppins_regular"
                         android:paddingHorizontal="10dp"
-                        android:text="Tanggal"
-                        android:textSize="16dp"
-                        android:textColor="@color/black"/>
+                        android:text="Tanggal Tes"
+                        android:textSize="14dp"
+                        android:textColor="@color/detail_grey"/>
 
-                    <Spinner
-                        android:id="@+id/spinnerlayanan"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                    <LinearLayout
+                        android:layout_width="160dp"
+                        android:layout_height="28dp"
                         android:background="@drawable/boxborder"
-                        android:gravity="center"
-                        android:paddingHorizontal="4dp"
-                        android:textColor="@color/black" />
+                        android:gravity="center">
+
+                        <Spinner
+                            android:id="@+id/spinnerlayanan"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:autofillHints="Pilih Layanan"
+                            android:paddingRight="2dp"
+                            android:textColor="@color/black" />
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
@@ -91,12 +96,12 @@
                         android:orientation="horizontal"
                         android:background="#00000000"
                         android:gravity="center"
-                        android:padding="8dp">
+                        android:padding="3dp">
 
                         <ImageView
                             android:id="@+id/buttonbackmonth"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
                             android:src="@drawable/backbutton" />
 
                         <TextView
@@ -106,15 +111,15 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="16dp"
                             android:layout_marginEnd="16dp"
+                            android:fontFamily="@font/poppins_medium"
                             android:text="Juli"
                             android:textColor="#000"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
+                            android:textSize="14sp" />
 
                         <ImageView
                             android:id="@+id/buttonnextmonth"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
                             android:src="@drawable/nextbutton" />
 
                     </LinearLayout>
@@ -122,14 +127,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:paddingHorizontal="25dp"
-                        android:layout_marginTop="20dp">
+                        android:paddingHorizontal="8dp"
+                        android:layout_marginTop="10dp">
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
+                            android:fontFamily="@font/poppins_regular"
+                            android:textSize="12sp"
                             android:text="Min"/>
 
                         <TextView
@@ -137,6 +144,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
+                            android:fontFamily="@font/poppins_regular"
+                            android:textSize="12sp"
                             android:text="Sen"/>
 
                         <TextView
@@ -144,6 +153,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
+                            android:fontFamily="@font/poppins_regular"
+                            android:textSize="12sp"
                             android:text="Sel"/>
 
                         <TextView
@@ -151,6 +162,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
+                            android:fontFamily="@font/poppins_regular"
+                            android:textSize="12sp"
                             android:text="Rab"/>
 
                         <TextView
@@ -158,6 +171,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
+                            android:fontFamily="@font/poppins_regular"
+                            android:textSize="12sp"
                             android:text="Kam"/>
 
                         <TextView
@@ -165,6 +180,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
+                            android:fontFamily="@font/poppins_regular"
+                            android:textSize="12sp"
                             android:text="Jum"/>
 
                         <TextView
@@ -172,6 +189,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
+                            android:fontFamily="@font/poppins_regular"
+                            android:textSize="12sp"
                             android:text="Sab"/>
                     </LinearLayout>
 
@@ -182,11 +201,7 @@
                         android:layout_height="wrap_content"
                         android:columnCount="7"
                         android:rowCount="6"
-                        android:paddingHorizontal="25dp"
-                        android:layout_marginTop="5dp"
-                        >
-
-
+                        android:layout_marginTop="5dp">
 
                         <!-- Repeat for each day -->
 
@@ -203,7 +218,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Waktu Tes"
-                        android:textSize="18sp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textSize="16sp"
                         android:textColor="@color/black"
                         android:layout_marginLeft="10dp"
                         tools:ignore="MissingConstraints" />
@@ -212,18 +228,18 @@
                         android:id="@+id/timeGrid"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:columnCount="3"
-                        >
+                        android:padding="0dp"
+                        android:columnCount="3">
+
                         <TextView
                             android:id="@+id/cardforTime"
-                            android:layout_width="130dp"
-                            android:layout_height="50dp"
+                            android:layout_width="95dp"
+                            android:layout_height="30dp"
                             android:text="00:00 - 02:00"
-                            android:gravity="center"
-                            android:textSize="18sp"
+                            android:textSize="12sp"
                             android:textColor="@color/black"
                             android:background="@drawable/boxborder"
-                            tools:ignore="MissingConstraints"></TextView>
+                            tools:ignore="MissingConstraints"/>
                     </GridLayout>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
@@ -246,6 +262,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Selanjutnya"
+                android:textSize="14sp"
                 android:fontFamily="@font/poppins_regular"
                 android:background="@drawable/buttonselanjutnya"
                 android:textAllCaps="false"
@@ -253,12 +270,12 @@
                 android:layout_marginVertical="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 />
-            <include
-                android:id="@+id/bottomNavbar"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                layout="@layout/custom_navbar" />
+<!--            <include-->
+<!--                android:id="@+id/bottomNavbar"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="55dp"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                layout="@layout/custom_navbar" />-->
         </LinearLayout>
     </LinearLayout>
 

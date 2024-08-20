@@ -1,8 +1,12 @@
 package com.example.projectux;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,12 +39,19 @@ public class DetailTesActivity extends BaseActivity {
         setContentView(R.layout.activity_riwayat_tes_layout);
 
 //        Navbar Functionalities
-        simplified_top_navbar();
+//        simplified_top_navbar();
+        ImageView btn_back = findViewById(R.id.btn_back);
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DetailTesActivity.this, RiwayatPasienActivity.class);
+                startActivity(intent);
+            }
+        });
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navbar);
         bottomNavigationView.setSelectedItemId(R.id.menu_riwayat);
         bottom_navbar();
-
 
         SearchView searchViewTes = findViewById(R.id.search_tes);
 

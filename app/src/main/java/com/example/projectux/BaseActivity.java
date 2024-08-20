@@ -73,6 +73,8 @@ public class BaseActivity extends AppCompatActivity {
         TextView navbar_username = findViewById(R.id.profile_username);
         ImageView navbar_prof_pic = findViewById(R.id.profile_pic);
 
+        navbar_username.setText(User.user.getUsername());
+
         navbar_username.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
