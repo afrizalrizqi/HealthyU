@@ -49,9 +49,9 @@ public class DetailTesActivity extends BaseActivity {
             }
         });
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navbar);
-        bottomNavigationView.setSelectedItemId(R.id.menu_riwayat);
-        bottom_navbar();
+//        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navbar);
+//        bottomNavigationView.setSelectedItemId(R.id.menu_riwayat);
+//        bottom_navbar();
 
         SearchView searchViewTes = findViewById(R.id.search_tes);
 

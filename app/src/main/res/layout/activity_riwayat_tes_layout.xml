@@ -130,17 +130,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="60dp"
         android:id="@+id/recycler_view_tes"/>
 
     </LinearLayout>
 
 
-    <include
-        android:id="@+id/bottomNavbar"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:layout_alignParentBottom="true"
-        layout="@layout/custom_navbar" />
+<!--    <include-->
+<!--        android:id="@+id/bottomNavbar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="55dp"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        layout="@layout/custom_navbar" />-->
 
 </RelativeLayout>
