@@ -1,6 +1,8 @@
 package com.example.projectux;
 
 import android.os.Bundle;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -9,10 +11,12 @@ import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class DetailTesActivity extends AppCompatActivity {
+public class DetailTesActivity extends BaseActivity {
 
     TextView namaTextView, nikTextView;
     RecyclerView recyclerViewTes;
@@ -22,7 +26,21 @@ public class DetailTesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //        Remove Action Bar
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getSupportActionBar().hide();
+
         setContentView(R.layout.activity_riwayat_tes_layout);
+
+//        Navbar Functionalities
+        simplified_top_navbar();
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navbar);
+        bottomNavigationView.setSelectedItemId(R.id.menu_riwayat);
+        bottom_navbar();
+
 
         SearchView searchViewTes = findViewById(R.id.search_tes);
 

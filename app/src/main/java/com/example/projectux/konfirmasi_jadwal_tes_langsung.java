@@ -64,13 +64,10 @@ public class konfirmasi_jadwal_tes_langsung extends BaseActivity {
 
 
 
-        Pasien selectedPasien = (Pasien) getIntent().getSerializableExtra("selectedPasien");
-        if (selectedPasien != null) {
-            SelectedPasien = selectedPasien;
-        } else {
-            SelectedPasien = pasienList.get(0);
+//        Pasien selectedPasien = (Pasien) getIntent().getSerializableExtra("selectedPasien");
+        if (SelectedPasien == null) {
+            SelectedPasien = pasienList.get(pasienList.size()-1);
         }
-
         TextView namaUser = findViewById(R.id.namaUser);
         TextView nikUser = findViewById(R.id.nikUser);
         TextView noTelp = findViewById(R.id.noTelp);

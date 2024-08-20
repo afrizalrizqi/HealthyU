@@ -37,7 +37,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.namaView.setText(pasiens.get(position).getNama());
         holder.jenisKelaminView.setText(pasiens.get(position).getGender());
-        holder.lihatTesBtn.setText("Lihat Tes");
 
         holder.lihatTesBtn.setOnClickListener(new View.OnClickListener() {
             @Override

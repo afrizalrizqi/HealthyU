@@ -1,6 +1,11 @@
 package com.example.projectux;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,10 +13,12 @@ import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class RiwayatPasienActivity extends AppCompatActivity {
+public class RiwayatPasienActivity extends BaseActivity {
     MyAdapter myAdapter;
 
     List<Pasien> pasiens = new ArrayList<Pasien>();
@@ -19,7 +26,19 @@ public class RiwayatPasienActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //        Remove Action Bar
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getSupportActionBar().hide();
+
         setContentView(R.layout.activity_riwayat_pasien_layout);
+
+        top_navbar();
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navbar);
+        bottomNavigationView.setSelectedItemId(R.id.menu_riwayat);
+        bottom_navbar();
 
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
         SearchView searchView = findViewById(R.id.search_pasien);
@@ -40,6 +59,15 @@ public class RiwayatPasienActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         myAdapter = new MyAdapter(getApplicationContext(), pasiens);
         recyclerView.setAdapter(myAdapter);
+
+//        Button btn_lihat_tes = findViewById(R.id.btn_lihatTes);
+//        btn_lihat_tes.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(RiwayatPasienActivity.this, DetailTesActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override

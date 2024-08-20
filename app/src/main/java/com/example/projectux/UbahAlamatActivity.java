@@ -50,6 +50,7 @@ public class UbahAlamatActivity extends BaseActivity {
             Intent intent = new Intent(UbahAlamatActivity.this, TambahAlamatActivity.class);
             startActivity(intent);
         });
+
         Button btn_pilih = findViewById(R.id.btn_pilih);
 
         btn_pilih.setOnClickListener(new View.OnClickListener() {
@@ -57,7 +58,8 @@ public class UbahAlamatActivity extends BaseActivity {
             public void onClick(View v) {
                 if (ubahAlamatAdapter.getLastSelectedPosition() != -1) {
                     Intent intent = new Intent(UbahAlamatActivity.this, konfirmasi_jadwal_home_service.class);
-                    intent.putExtra("alamat", (Serializable) alamatList.get(ubahAlamatAdapter.getLastSelectedPosition()));
+                    SelectedAlamat = alamatList.get(ubahAlamatAdapter.getLastSelectedPosition());
+//                    intent.putExtra("selectedAlamat", (Serializable) alamatList.get(ubahAlamatAdapter.getLastSelectedPosition()));
                     startActivity(intent);
                 } else {
                     Toast.makeText(UbahAlamatActivity.this, "Pilih alamat terlebih dahulu", Toast.LENGTH_SHORT).show();

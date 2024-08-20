@@ -31,6 +31,7 @@ public class BaseActivity extends AppCompatActivity {
     Toolbar toolbar;
     public static List<Pasien> pasienList = new ArrayList<>();
     public static List<Alamat> alamatList = new ArrayList<>();
+
     public static Pasien SelectedPasien;
     public static Alamat SelectedAlamat;
     @Override

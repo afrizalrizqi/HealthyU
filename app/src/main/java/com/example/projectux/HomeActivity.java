@@ -37,19 +37,6 @@ public class HomeActivity extends BaseActivity {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navbar);
         bottomNavigationView.setSelectedItemId(R.id.menu_beranda);
         bottom_navbar();
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.menu_penjadwalan:
-                        Intent intent = new Intent(getApplicationContext(), TesActivity.class);
-                        startActivity(intent);
-                        return true;
-                    // handle other menu items if any
-                }
-                return false;
-            }
-        });
 
 
         EditText editTextBerat = findViewById(R.id.beratBadanInput);

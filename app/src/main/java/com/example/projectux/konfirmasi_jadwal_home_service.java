@@ -77,22 +77,19 @@ public class konfirmasi_jadwal_home_service extends BaseActivity {
         jamTesView.setText(jamTes);
 
 
-        Alamat selectedAlamat = (Alamat) getIntent().getSerializableExtra("alamat");
+
+//        SelectedAlamat = (Alamat) getIntent().getSerializableExtra("selectedAlamat");
         TextView namaAlamat = findViewById(R.id.namaLokasi);
         TextView alamatLengkap = findViewById(R.id.alamat);
-        if (selectedAlamat == null) {
-            SelectedAlamat = alamatList.get(0);
-        } else {
-            SelectedAlamat = selectedAlamat;
+        if (SelectedAlamat == null) {
+            SelectedAlamat = alamatList.get(alamatList.size()-1);
         }
         namaAlamat.setText(SelectedAlamat.getNama_alamat());
         alamatLengkap.setText(SelectedAlamat.getAlamat_lengkap());
 
-        Pasien selectedPasien = (Pasien) getIntent().getSerializableExtra("selectedPasien");
-        if (selectedPasien == null) {
-            SelectedPasien = pasienList.get(0);
-        }else {
-            SelectedPasien = selectedPasien;
+//        SelectedPasien = (Pasien) getIntent().getSerializableExtra("selectedPasien");
+        if (SelectedPasien == null) {
+            SelectedPasien = pasienList.get(pasienList.size()-1);
         }
         TextView namaUser = findViewById(R.id.namaUser);
         TextView nikUser = findViewById(R.id.nikUser);
@@ -103,5 +100,6 @@ public class konfirmasi_jadwal_home_service extends BaseActivity {
         nikUser.setText(SelectedPasien.getNIK());
         noTelp.setText(SelectedPasien.getNo_telp());
         gender.setText(SelectedPasien.getGender());
+
     }
 }

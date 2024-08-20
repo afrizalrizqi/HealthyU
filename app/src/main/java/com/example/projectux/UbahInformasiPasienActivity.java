@@ -69,18 +69,15 @@ public class UbahInformasiPasienActivity extends BaseActivity {
                     } else if ("konfirmasi_jadwal_tes_langsung".equals(returnTo)) {
                         intent = new Intent(UbahInformasiPasienActivity.this, konfirmasi_jadwal_tes_langsung.class);
                     }
-                    intent.putExtra("selectedPasien", selectedPasien);
+//                    intent.putExtra("selectedPasien", selectedPasien);
+                    SelectedPasien = selectedPasien;
+
                     startActivity(intent);
                 }else {
                     Toast.makeText(UbahInformasiPasienActivity.this, "Pilih pasien terlebih dahulu", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-
-
-
-
-
 
         Pasien newPasien = (Pasien) getIntent().getSerializableExtra("newPasien");
         if (newPasien != null) {

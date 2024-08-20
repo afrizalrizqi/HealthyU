@@ -1,15 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        layout="@layout/simplified_action_bar" />
+
     <LinearLayout
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:paddingHorizontal="20dp"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:layout_gravity="center_horizontal"
         android:orientation="vertical"
         android:background="@drawable/informasi_pasien_background">
@@ -21,9 +34,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Informasi Pasien"
+            android:fontFamily="@font/poppins_semi_bold"
             android:textColor="@color/black"
             android:textStyle="bold"
-            android:textSize="18sp"/>
+            android:textSize="14sp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -35,6 +49,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
+                android:fontFamily="@font/poppins_semi_bold"
                 android:textColor="@color/black"
                 android:text="Nama   : "/>
 
@@ -43,6 +58,7 @@
                 android:layout_marginStart="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
                 android:text="nama"
                 android:textColor="@color/black"/>
         </LinearLayout>
@@ -58,14 +74,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
+                android:fontFamily="@font/poppins_semi_bold"
                 android:textColor="@color/black"
-                android:text="NIK       : "/>
+                android:text="NIK         : "/>
 
             <TextView
                 android:id="@+id/nik_pasien"
                 android:layout_marginStart="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
                 android:text="nik"
                 android:textColor="@color/black"/>
         </LinearLayout>
@@ -75,9 +93,9 @@
     <!--    Tes Pasien-->
 
     <LinearLayout
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="30dp"
-        android:layout_width="360dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_gravity="center_horizontal">
@@ -86,20 +104,18 @@
             android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semi_bold"
             android:text="Riwayat Tes Pasien"
             android:textColor="@color/black"
-            android:textStyle="bold"
-            android:textSize="20sp"/>
-
+            android:textSize="16sp"/>
 
     </LinearLayout>
 
     <androidx.appcompat.widget.SearchView
         android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="20dp"
         android:layout_marginEnd="12dp"
         android:layout_marginStart="12dp"
         android:id="@+id/search_tes"
@@ -114,9 +130,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="60dp"
         android:id="@+id/recycler_view_tes"/>
 
+    </LinearLayout>
 
 
+    <include
+        android:id="@+id/bottomNavbar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        layout="@layout/custom_navbar" />
 
-</LinearLayout>
+</RelativeLayout>
