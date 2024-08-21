@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class NotificationActivity extends BaseActivity {
@@ -44,6 +45,7 @@ public class NotificationActivity extends BaseActivity {
         rvNotification.setHasFixedSize(true);
 
         list.addAll(NotificationData.getListData());
+        Collections.reverse(list);
         showRecyclerList();
     }
 

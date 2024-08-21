@@ -1,8 +1,11 @@
 package com.example.projectux;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -12,6 +15,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,6 +33,7 @@ public class ProfileActivity extends BaseActivity {
     private TextView txt_alamat;
     private TextView txt_detail_alamat;
     private TextView link_ubah;
+    private Button btn_keluar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -133,6 +138,31 @@ public class ProfileActivity extends BaseActivity {
 
                     Toast.makeText(ProfileActivity.this, "Profil berhasil diubah!", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+        btn_keluar = findViewById(R.id.btn_keluar);
+        btn_keluar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog dialog = new AlertDialog.Builder(ProfileActivity.this).create();
+                dialog.setTitle("Konfirmasi");
+                dialog.setMessage("Apakah Anda yakin ingin keluar?");
+                dialog.setButton(DialogInterface.BUTTON_POSITIVE, "Ya", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent =  new Intent(ProfileActivity.this, LoginActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                });
+                dialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Tidak", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+                dialog.show();
             }
         });
     }

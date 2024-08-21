@@ -38,6 +38,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
         holder.namaView.setText(pasiens.get(position).getNama());
         holder.jenisKelaminView.setText(pasiens.get(position).getGender());
 
+        if(pasiens.get(position).getGender().equals("Laki-Laki"))
+        {
+            holder.icon_gender.setBackgroundResource(R.drawable.baseline_male_24);
+        } else if (pasiens.get(position).getGender().equals("Perempuan")) {
+            holder.icon_gender.setBackgroundResource(R.drawable.baseline_female_24);
+        }
+
         holder.lihatTesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

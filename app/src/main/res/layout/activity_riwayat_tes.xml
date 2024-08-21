@@ -3,7 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="8dp"
+    android:padding="2dp"
+    app:cardCornerRadius="8dp"
     android:background="@drawable/detail_tes_background"
     android:backgroundTint="@color/white"
     android:elevation="4dp">
@@ -110,6 +113,29 @@
                 android:drawablePadding="8dp"
                 android:text="Status"
                 android:textColor="@color/black"/>
+
+<!--            <RelativeLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:gravity="center_vertical">-->
+<!---->
+<!--                <ImageView-->
+<!--                    android:id="@+id/icon_status"-->
+<!--                    android:layout_width="20dp"-->
+<!--                    android:layout_height="20dp"-->
+<!--                    android:layout_marginRight="8dp"/>-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/status_tes"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_toRightOf="@id/icon_status"-->
+<!--                    android:fontFamily="@font/poppins_regular"-->
+<!--                    android:text="Status"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="12dp" />-->
+<!--            </RelativeLayout>-->
 
         </LinearLayout>
 

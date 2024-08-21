@@ -1,6 +1,7 @@
 package com.example.projectux;
 
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class MyTesViewHolder extends RecyclerView.ViewHolder {
 
     TextView namaTesView, lokasiTesView, tanggalTesView, waktuTesView, statusTesView;
+    ImageView icon_status;
 
     public MyTesViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -17,5 +19,6 @@ public class MyTesViewHolder extends RecyclerView.ViewHolder {
         tanggalTesView = itemView.findViewById(R.id.tanggal_tes);
         waktuTesView = itemView.findViewById(R.id.waktu_tes);
         statusTesView = itemView.findViewById(R.id.status_tes);
+//        icon_status = itemView.findViewById(R.id.icon_status);
     }
 }

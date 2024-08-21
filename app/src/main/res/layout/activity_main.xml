@@ -119,12 +119,12 @@
         android:textSize="14dp"
         />
 
-    <Button
-        android:id="@+id/bookingtes"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="To bookingtes Activity"
-        >
+<!--    <Button-->
+<!--        android:id="@+id/bookingtes"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="To bookingtes Activity"-->
+<!--        >-->
 
-    </Button>
+<!--    </Button>-->
 </LinearLayout>

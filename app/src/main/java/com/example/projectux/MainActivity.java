@@ -45,14 +45,14 @@ public class MainActivity extends AppCompatActivity {
         password=findViewById(R.id.password);
         register=findViewById(R.id.register);
 
-        Button bookingtes = findViewById(R.id.bookingtes);
-        bookingtes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, HomeActivity.class);
-                startActivity(intent);
-            }
-        });
+//        Button bookingtes = findViewById(R.id.bookingtes);
+//        bookingtes.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
 
         textView= (TextView)findViewById(R.id.ke_login);

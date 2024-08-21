@@ -13,14 +13,20 @@
         android:layout_height="70dp"
         layout="@layout/simplified_action_bar" />
 
+    <ScrollView
+        android:layout_below="@id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/toolbar"
             android:paddingVertical="20dp"
             android:paddingHorizontal="50dp">
 
         <LinearLayout
+            android:id="@+id/user_info"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -146,6 +152,18 @@
 
         </LinearLayout>
 
+            <Button
+                android:id="@+id/btn_keluar"
+                android:layout_below="@id/user_info"
+                style="@style/btn_style"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/logout_button"
+                android:textColor="@color/white"
+                android:text="Keluar"/>
+
         </RelativeLayout>
+    </ScrollView>
 
 </RelativeLayout>
